@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Tic Tac Toe!</title>
+        <script src="https://code.jquery.com/jquery-2.1.4.min.js "></script>
+        <style>
+            table{
+                width:60%;
+                margin: 0 auto;
+            }
+            td{
+                width:33%;
+                border: 2px solid black;
+                text-align: center;
+                font-size:40px;
+                padding:55px;
+                height:.85px
+            }
+        </style>
+    </head>
+    <body>
+        <table>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table> 
+        <center> 
+            <h1>Current Mode:
+            
+        
+            <center>
+           
+        
+        <button onclick="xclick();">Fill grid with X</button>
+        
+        <button onclick="changecolor();">change color</button>
+        <script>
+            var clickCounter = 0;
+            $("td").on("click", function(){
+                if (clickCounter % 2 == 0){ 
+                    $(this).html("X");
+                }
+                 else{
+                    $(this).html("0");
+
+                }
+                clickCounter++;
+                $(this).unbind("click")                                            
+            });
+            
+            function xclick(){
+                $("td").html("X");
+            }
+            function changecolor (){
+            var c = Math.round(Math.random()*255);
+            var color ="rgb(" + c + "," + c + "," + c + ")";
+                $("td").css("background-color",color);
+            }
+        </script>
+    </body>
+</html>
